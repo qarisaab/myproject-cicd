@@ -6,7 +6,7 @@ pipeline {
                     script {
                         echo "building the application ...."
                         sh 'chmod +x gradlew'
-                        sh './gradlew'
+                        sh './gradlew build'
                     }
                 }
             }
