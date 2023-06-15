@@ -27,7 +27,7 @@ pipeline {
                     script {
                         def dockercmd = 'docker run -d -p 8081:8080 qarisaab/gradleapp'
                         sshagent(['ssh-aws-ec2']) {
-                            sh "ssh -o StrictHostKeyChecking=no ubuntu@35.168.58.210 ${dockercmd}"
+                            sh "sudo ssh -o StrictHostKeyChecking=no ubuntu@35.168.58.210 ${dockercmd}"
                         }
                     }
                 }
