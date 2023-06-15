@@ -25,7 +25,10 @@ pipeline {
             stage("deploy") {
                 steps {
                     script {
-                        echo "deploying the application ...."
+                        def dockercmd = 'docker run -d -p 8081:8080 qarisaab/gradleapp'
+                        sshagent(['ssh-aws-ec2']) {
+                            sh "ssh -o StrictHostKeyChecking=no ubuntu@35.168.58.210 ${dockercmd}"
+                        }
                     }
                 }
             }
