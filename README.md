@@ -1,13 +1,2 @@
-#### This is a demo Project
-##### build the project
-
-    ./gradlew build
-
-##### build Docker image called java-app. Execute from root
-
-    docker build -t java-app .
-    
-##### push image to repo 
-
-    docker tag java-app demo-app:java-1.0
+##### This is a demo Project that builds java app with gradle and pushes the gradle app image to my dockerub and then deploy it to AWS EC2
     
